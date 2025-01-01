@@ -1,4 +1,3 @@
-
 # Edit this configuration file to define what should be installed on
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
@@ -14,7 +13,12 @@
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
+  services.xserver.windowManager.bspwm.enable = true;
 
+
+  environment.variables = {
+    SUDO_EDITOR = "nvim";
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -88,7 +92,6 @@
     nodejs_23
     lunarvim
     kitty
-    alacritty
     lua-language-server
     zip
     unzip
@@ -97,6 +100,22 @@
     gcc
     black
     isort
+    cargo
+    nixd
+    luajitPackages.luacheck
+    bspwm
+    sxhkd
+    rofi
+    feh
+    neofetch
+    picom-pijulius
+    killall
+    lxappearance
+    papirus-icon-theme
+    lazygit
+    polybar
+    flameshot
+    simplescreenrecorder
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

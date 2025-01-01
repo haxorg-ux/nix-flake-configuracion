@@ -1,3 +1,4 @@
+
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
@@ -47,15 +48,17 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  # home.packages = with pkgs; [ 
-  #   steam
-  #   nerdfonts
-  # ];
+  home.packages = with pkgs; [ 
+    # ranger
+    zsh
+    xclip
+  ];
 
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
+
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
